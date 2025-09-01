@@ -102,7 +102,19 @@ searchImage.addEventListener( "click" , function(){
         }
     }
       noItemsMessage.style.display = anyMatch ? "none" : "block";
-       saveData();
+    //    saveData();
+});
+
+
+inputBox.addEventListener("input" , function(){
+    if (inputBox.value === "") {
+    const items = listContainer.getElementsByTagName("li");
+    for (let i = 0; i < items.length; i++) {
+      items[i].style.display = "";
+    }
+    noItemsMessage.style.display = "none";
+  }
+
 });
 
 
